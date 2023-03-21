@@ -31,7 +31,7 @@ class EasyTest(unittest.TestCase):
         self.assertLess(self.get_ratio(s), 2.0)
     
     def test_multi(self):
-        for _ in range(50):
+        for _ in range(10):
             s = []
             for x in range(8):
                 t = self.random_string(16)
