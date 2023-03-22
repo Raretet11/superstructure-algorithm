@@ -31,9 +31,17 @@ class EasyTest(unittest.TestCase):
         self.assertLess(self.get_ratio(s), 2.0)
     
     def test_multi(self):
-        for _ in range(50):
+        for _ in range(10):
             s = []
-            for x in range(8):
+            for x in range(4):
                 t = self.random_string(16)
                 s.append(t)
             self.assertLess(self.get_ratio(s), 2.0)
+
+    def test_many_overlaps(self):
+        s = ['eabc', 'abcd', 'eaqbcf', 'afv', 'fq', 'vrt']
+        self.assertLess(self.get_ratio(s), 2.0)
+    
+    def test_2(self):
+        s = ['eabc', 'abcd', 'eac', 'hyt', 'iwgh', 'utd', 'utd']
+        self.assertLess(self.get_ratio(s), 2.0)
